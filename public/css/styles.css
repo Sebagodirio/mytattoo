@@ -1,0 +1,161 @@
+.avatar {
+    margin: 2% auto 5% auto;
+    display: block;
+}
+
+.avatar img {
+    width: 15vw;
+    height: 15vh;
+    border-radius: 10px;
+}
+
+.avatar-min {
+    margin: auto;
+    margin-top: 5px;
+    display: block;
+}
+
+.avatar-min img {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.avatar-max img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.navbar {
+    background-color: #CD5C5C;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    transition: all 0.6s;
+    color: rgba(109, 96, 96, 0.829);
+    text-decoration: none;
+}
+
+.card {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.233);
+}
+
+.card-detail {
+    height: 100%;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-body-detail {
+    height: 70%;
+}
+
+.card-body-up {
+    margin-top: 5%;
+}
+
+.card-body-login {
+    margin-top: 15%;
+    height: 70%;
+}
+
+.card-body-register {
+    margin-top: 5%;
+    height: 70%;
+}
+
+.card-image {
+    margin: auto;
+    padding: 0;
+}
+
+.card-image li {
+    margin: auto 5px;
+    list-style: none;
+}
+
+.card-body {
+    height: 70vh;
+}
+
+.card-image-body {
+    width: 100%;
+    height: 80%;
+    margin: auto;
+}
+
+.card-image-body img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-config {
+    height: 95vh;
+}
+
+.fix-li-nav {
+    margin-right: 2vw;
+    margin-top: 1vh;
+}
+
+.below-box {
+    padding: 2%;
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+}
+
+.below-box img {
+    width: 10%;
+    height: 10%;
+}
+
+textarea {
+    margin: 3% 0;
+}
+
+.user-detail {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 5%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.425);
+}
+
+.user-detail-data {
+    padding-left: 10vw;
+    color: white;
+}
+
+
+/* FOLLOWERS */
+
+.follow-box {
+    display: flex;
+    width: 80vw;
+    height: 25vh;
+    padding: 5px;
+    margin: 5% auto;
+    background-color: rgba(255, 255, 255, 0.384);
+    border: 1px solid black;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.253);
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.data-follower {
+    color: black;
+    text-align: center;
+    width: 20%;
+}
