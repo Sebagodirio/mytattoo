@@ -40,7 +40,7 @@
 @if(!$flag)
 <div class="container">
     <div class="alert alert-danger text-center">
-        <p>No sigues a nadie</p>
+        <p>No sigues a nadie. Ir a <a href="{{ route('user.people') }}">buscar personas</a> para seguir gente.</p>
     </div>
 </div>
 @endif

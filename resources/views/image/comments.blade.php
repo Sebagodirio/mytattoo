@@ -45,8 +45,9 @@
                             <img src="{{ asset('img/heart_full.png') }}" data-id="{{ $image->id }}" class="btn-dislike">
                             @else
                             <!-- If not, I´ll show the empty heart. -->
-                            <img src="{{ asset('img/heart_empty.png') }}" data-id="{{ $image->id }}" class="btn-like">
+                            <img src="{{ asset('img/heart_empty.png') }}" data-id="{{ $image->id }}"   class="btn-like">
                             @endif
+                            <a href="{{ route('image.likes',['id' => $image->id]) }}"><spam class="text-muted">({{count($image->likes)}})</spam></a>
                             <span class="text-muted">| Comentarios({{count($image->comments)}})</span><!-- Count the comments by image. -->
                         </div>
                         <div class="comment-box">
