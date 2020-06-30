@@ -34,11 +34,11 @@ class LikeController extends Controller
             $like->user_id = $user->id;
             $like->image_id = (int)$image_id;
 
-            //Guardar en base de datos
+            //Save in database
 
             $like->save();
 
-            return response()->json([ //RETORNO UN ARCHIVO JSON PARA TRABAJAR CON AJAX
+            return response()->json([ //I return a JSON in order to work with AJAX
                 'like' => $like
             ]);
         } else{
@@ -49,20 +49,20 @@ class LikeController extends Controller
     }
 
     public function dislike($image_id){
-        //Recoger datos del usuario y la imagen
+        
         $user = \Auth::user();
 
-        //Comprobar si existe el like para no duplicarlo
+        
 
         $like = Like::where('user_id',$user->id)->where('image_id',$image_id)->first();
 
         if($like){
 
-            //Eliminar like
+            //Delete like
             $like->delete();
             
 
-            return response()->json([ //RETORNO UN ARCHIVO JSON PARA TRABAJAR CON AJAX
+            return response()->json([ //I return a JSON in order to work with AJAX
                 'like' => $like,
                 'message' => 'Has dado dislike'
             ]);

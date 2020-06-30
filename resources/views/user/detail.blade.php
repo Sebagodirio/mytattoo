@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- This view shows every image of the user. With his likes and comments by image. -->
 <div class="container">
             @if(session('message'))
             <div class="alert alert-success">
@@ -23,14 +25,15 @@
             <div><p>{{$user->description}}</p></div>
             @endif
             <?php $check = false ?>
-            @foreach($user->followers as $follow) 
-                @if($follow->follower == Auth::user()->id)
+            <!-- I check if the auth user follows the user of the detail -->
+            @foreach($user->followers as $follow)   
+                @if($follow->follower == Auth::user()->id) 
                     
                     <?php $check = true ?>
                     
                 @endif
             @endforeach
-            @if(!(Auth::user()->id == $user->id))    
+            @if(!(Auth::user()->id == $user->id))  <!-- If the auth user is not in his own detail: -->   
                 @if($check)
                 <div><a href="{{ route('follower.unfollow',['id' => $user->id]) }}" class="btn btn-danger">Dejar de seguir</a></div>
                 @else
@@ -43,8 +46,8 @@
         <div class="col-md-8">
            
         
-
-            @foreach($user->images as $image)
+            <!-- Show all the images of the user -->
+            @foreach($user->images as $image) 
             <div class="card" style="margin-bottom: 20px;">
                 <div class="card-header">
                     <ul class="d-flex card-image">
@@ -68,10 +71,10 @@
                     </div>
                     <div class="below-box">
                         <?php $flag = false; ?>
-                        @foreach($image->likes as $like)
+                        <!-- Check if the auth user gave like to every image -->
+                        @foreach($image->likes as $like)  
                         @if($like->user->id == Auth::user()->id)
                         <?php $flag = true; ?>
-                        <!-- RECORRO TODOS LOS LIKES Y SI SE LEVANTA LA BANDERA ES PORQUE EL USUARIO IDENTIFICADO TIENE UN LIKE EN ESA FOTO -->
                         @endif
                         @endforeach
 

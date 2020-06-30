@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <!-- Form for the configuration of the auth user. -->
             @if(session('message'))
                 <div class="alert alert-success">
                     {{ session('message') }}

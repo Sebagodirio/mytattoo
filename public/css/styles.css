@@ -10,7 +10,6 @@
 }
 
 .avatar-min {
-    margin: auto;
     margin-top: 5px;
     display: block;
 }
@@ -48,7 +47,7 @@ a:hover {
 }
 
 .card-detail {
-    height: 100%;
+    max-height: 100%;
 }
 
 .card-body {
@@ -158,4 +157,27 @@ textarea {
     color: black;
     text-align: center;
     width: 20%;
+}
+
+
+/* Comments below the picture */
+
+.comments-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments-box-header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.comments-box-text {
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.comment-content {
+    margin-left: 15px;
 }

@@ -39,7 +39,7 @@ class FollowerController extends Controller
 
 
         $user = \Auth::user();
-        $followed = Follower::where('follower','=',$user->id)->get();
+        $followed = Follower::where('follower','=',$user->id)->get(); /* I get the followers who are in a relation with the auth user. (If the auth user is followed or follower) */
 
         return view('follower.followed',[
             'followed' => $followed
@@ -48,7 +48,7 @@ class FollowerController extends Controller
     
     public function getMyFollowers(){
         $user = \Auth::user();
-
+        /* I get the followers who follow the auth user. */
         $followers = Follower::where('user_id','=',$user->id)->get();
 
         return view('follower.followers',[

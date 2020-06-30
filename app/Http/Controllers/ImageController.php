@@ -64,19 +64,23 @@ class ImageController extends Controller
     }
 
     public function delete($id){
+
+        /* For deleting an image, first I must delete the likes and comments witch belong to the current image */
         $user = \Auth::user();
         $image = Image::find($id);
         $comments = Comment::where('image_id',$id)->get();
         $likes = Like::where('image_id',$id)->get();
 
-        if($user && $image && $image->user_id == $user->id){
+        if($user && $image && $image->user_id == $user->id){ /* This image can be deleted ONLY by his owner. */
             /* Eliminar comentarios */
+
+            /* Delete the comments */
             if($comments && count($comments) >= 1){
                 foreach($comments as $comment){
                     $comment->delete();
                 }
              }
-            /* Eliminar likes */
+            /* Delete the likes */
             if($likes && count($likes) >= 1){
                 foreach($likes as $like){
                     $like->delete();
@@ -84,9 +88,12 @@ class ImageController extends Controller
                     
                 }
              }
-            /* Eliminar ficheros de imagen */
+
+             /* Delete the image */
+            
+             /* Delete the image from disk */
              Storage::disk('images')->delete($image->image_path);
-            /* Eliminar el registro de la imagen */
+            /* Delete image from database */
             $image->delete();
 
             $message = ['message' => 'La imagen se ha borrado correctamente'];

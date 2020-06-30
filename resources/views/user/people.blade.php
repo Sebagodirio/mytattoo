@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <!-- View for showing the user searched -->
          <div class="container">
+             <!-- Form for searching -->
             <form action="{{ route('user.people') }}" method="GET" id="buscador">
                 <div class="row">
                     <div class="form-group col">
@@ -14,15 +15,15 @@
                 </div>
             </form>
             </div>
-@if($users)
-@foreach($users as $user)
+@if($users) <!-- If the seatch got any result -->
+@foreach($users as $user) <!-- Fir each result (user): -->
 
 
 
 <div class="container">
 
     
-
+    <!-- Show user -->
     <div class="follow-box d-flex">
         @if($user->image)
         <div class="avatar-max">
